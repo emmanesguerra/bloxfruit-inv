@@ -16,6 +16,7 @@ class Accounts extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('username');
+            $table->string('email');
             $table->string('storage_ctr');
             $table->timestamps();
         });

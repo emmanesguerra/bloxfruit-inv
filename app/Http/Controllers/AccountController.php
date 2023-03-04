@@ -14,7 +14,9 @@ class AccountController extends Controller
      */
     public function index()
     {
-        //
+        $data = Account::all();
+        
+        return view('account.index', ['data' => $data]);
     }
 
     /**

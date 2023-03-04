@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Fruits extends Migration
+class CreateInventoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class Fruits extends Migration
      */
     public function up()
     {
-        Schema::create('fruits', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('type');
-            $table->string('beli');
+            $table->unsignedInteger('account_id');
+            $table->unsignedInteger('fruit_id');
+            $table->unsignedInteger('quantity');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class Fruits extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fruits');
+        Schema::dropIfExists('inventories');
     }
 }
