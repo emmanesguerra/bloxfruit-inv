@@ -41,6 +41,10 @@
     <div class='col-2 mt-5'>
         <div>
             <div class="form-group mb-3">
+                <label class='font-bold'>Current Server</label>
+                <input type="text" class="form-control" id="servername">
+            </div>
+            <div class="form-group mb-3">
                 <label class='font-bold'>Factory Raid</label>
                 <div class="row">
                     <div class="col-6">
@@ -105,6 +109,12 @@
 
     function recalculate()
     {
+        var servername = $('#servername').val();
+        
+        if(servername) {
+            setCookie('servernamesaved', servername, 1000);
+        }
+        
         var factory = $('#factory').val();
         var fist = $('#fist').val();
         var spin = $('#spin').val();
@@ -123,7 +133,39 @@
             $('#' + el).val(newTime.format('HH:mm'));
             
             $('#' + el + '-standard').html(newTime.format('hh:mm A'));
+            
+            setCookie(el+'saved', newTime.format('HH:mm'), 1000);
         }
+    }
+
+    $( document ).ready(function() {
+        var factory = getCookie('factorysaved');
+        var fist = getCookie('fistsaved');
+        var spin = getCookie('spinsaved');
+        var servername = getCookie('servernamesaved');
+        
+        $('#factory').val(factory);
+        $('#fist').val(fist);
+        $('#spin').val(spin);
+        $('#servername').val(servername);
+    });
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
     }
 </script>
 @endsection
