@@ -20,11 +20,14 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        
+        @yield('styles')
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/moment.js') }}"></script>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div class="relative flex items-top justify-center min-h-screen px-5">
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                 <a href="{{ route('home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Inventory</a>
                 <a href="{{ route('accounts.index') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Accounts</a>

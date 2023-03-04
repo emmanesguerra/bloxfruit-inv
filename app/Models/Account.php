@@ -11,6 +11,6 @@ class Account extends Model
     protected $guarded = [];
     
     public function fruits() {
-        return $this->hasMany(Inventory::class);
+        return $this->hasMany(Inventory::class)->where('quantity', '>', 0);
     }
 }
