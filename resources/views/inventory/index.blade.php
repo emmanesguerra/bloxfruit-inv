@@ -45,6 +45,17 @@
                 <input type="text" class="form-control" id="servername">
             </div>
             <div class="form-group mb-3">
+                <label for="exampleInputPassword1">Fruit Spin</label>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" class="form-control" id="spin">
+                    </div>
+                    <div class="col-6">
+                        <span class="form-control" id="spin-standard"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
                 <label class='font-bold'>Factory Raid</label>
                 <div class="row">
                     <div class="col-6">
@@ -64,17 +75,6 @@
                     <div class="col-6">
                         <span class="form-control" id="fist-standard"></span>
                     </div>
-            </div>
-            <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Fruit Spin</label>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" class="form-control" id="spin">
-                    </div>
-                    <div class="col-6">
-                        <span class="form-control" id="spin-standard"></span>
-                    </div>
-                </div>
             </div>
             <button onclick='recalculate()' class="btn btn-primary">Recalculate</button>
         </div>
@@ -206,7 +206,7 @@
     }
     tbody {
         display:block;
-        height:750px;
+        height:775px;
         overflow:auto;
     }
     thead, tbody tr {
