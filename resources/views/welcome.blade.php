@@ -23,7 +23,9 @@
         
         @yield('styles')
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}">
         <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/datatables.min.js') }}"></script>
         <script src="{{ asset('js/moment.js') }}"></script>
     </head>
     <body class="antialiased">
